@@ -33,9 +33,48 @@ Short Form    | Long Form     | Description
 -m            | --reset        | Reset everything.
 -q            | --question        | Set to true to disable questions asking for input (Default: no).
 
+
+# Running Subalert using Docker 
+
+- Will configure a container and run subalert every 12 hours
+- All found subdomains will be send to a slack channel
+
+## ENV Variables
+
+|ENV & ARG                 |Value                          |Description                                    |
+|--------------------------|------------------------------------------|------------------------------------|
+|**SLACK_WEB_HOOK**        |`https://hooks.slack.com/services/xxxx`   | Your Slackwebhook                  |
+|**DOMAINS**               |`test.io,test.com,abc123.com`             | List of initial domains to scan    |
+
+
+## Build the production container
+
+```
+docker build https://github.com/yassineaboukir/sublert -t subalert
+```
+
+## Run the container passing required ENV variables
+
+
+```Dockerfile:
+docker run  --name subalert \
+-d -e "SLACK_WEB_HOOK=xxxxxxxxxxxxx" \
+-e "DOMAINS=test.io,test.com,abc123.com" 
+subalert
+```
+
+## To add mre domains once conatiner is live
+
+```
+docker exec -ti subalert /usr/bin/python3python3 /root/subalerts/sublert.py -u domain.com -q true
+``
+
+
 ## Feedback and issues?
 If you have any feedback, anything that you want to see implemented or running into issues using Sublert, please feel free to file an issue on https://github.com/yassineaboukir/sublert/issues
 
 ## Support
 If you appreciate my work and wish to support it, feel free to: <a href="http://buymeacoffee.com/yassineaboukir"><img src="https://cdn-images-1.medium.com/max/738/1*G95uyokAH4JC5Ppvx4LmoQ@2x.png" width="150"></a>
+
+
 
