@@ -7,7 +7,7 @@ add_urls() {
    for domain in "${DOMAINS[@]}"
     do
     : 
-    python3 sublert.py -u $domain -q true
+    echo $domain >> domains.txt
     done
 
 
