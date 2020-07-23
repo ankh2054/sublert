@@ -7,7 +7,7 @@ add_urls() {
    for domain in "${DOMAINS[@]}"
     do
     : 
-    /usr/bin/python3 sublert.py -u $domain -q true
+    python3 sublert.py -u $domain -q true
     done
 
 
@@ -33,7 +33,7 @@ EOF
 }
 
 slack_nitification(){
-/usr/bin/python3 sublert.py -r -l
+python3 sublert.py -r -l
 }
 
 
@@ -41,7 +41,7 @@ run_subalert(){
 
 while [ 1 ]
 do
-	/usr/bin/python3 sublert.py -r -l >> sublert.log 2>&1
+	python3 sublert.py -r -l >> sublert.log 2>&1
 	sleep 43200 # Run every 12 hours 
 done
 }
