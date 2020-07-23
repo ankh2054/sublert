@@ -6,21 +6,21 @@ add_urls() {
    for domain in "${DOMAINS[@]}"
     do
     : 
-    /usr/bin/python3python3 /root/subalerts/sublert.py -u $domain -q true
+    /usr/bin/python3/python3 /root/sublerts/sublert.py -u $domain -q true
     done
 
 
 }
 
 slack_nitification(){
-/usr/bin/python3 /root/subalerts/sublert.py -r -l
+/usr/bin/python3 /root/sublerts/sublert.py -r -l
 }
 
 
 run_subalert(){
 while [ 1 ]
 do
-	/usr/bin/python3 /root/subalerts/sublert.py -r -l >> /root/sublert/sublert.log 2>&1
+	/usr/bin/python3 /root/sublerts/sublert.py -r -l >> /root/sublerts/sublert.log 2>&1
 	sleep 43200 # Run every 12 hours 
 done
 }
