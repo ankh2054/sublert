@@ -36,8 +36,9 @@ Short Form    | Long Form     | Description
 
 # Running Subalert using Docker 
 
-- Will configure a container and run subalert every 12 hours
-- All found subdomains will be send to a slack channel
+- Will configure a container and run subalert every 12 hours.
+- All found subdomains will be send to a slack channel.
+- Once started if everything went well it sends a test alert to your slack.
 
 ## ENV Variables
 

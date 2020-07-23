@@ -10,6 +10,11 @@ add_urls() {
 
 }
 
+slack_nitification(){
+/usr/bin/python3 /root/subalerts/sublert.py -r -l
+}
+
+
 run_subalert(){
 while [ 1 ]
 do
@@ -20,4 +25,5 @@ done
 
 
 add_urls
+slack_nitification
 run_subalert
