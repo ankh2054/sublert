@@ -51,16 +51,16 @@ Short Form    | Long Form     | Description
 ## Build the production container
 
 ```
-docker build https://github.com/yassineaboukir/sublert -t subalert
+docker build https://github.com/yassineaboukir/sublert.git -t subalert
 ```
 
 ## Run the container passing required ENV variables
 
 
 ```Dockerfile:
-docker run  --name subalert \
--d -e "SLACK_WEB_HOOK=xxxxxxxxxxxxx" \
--e "DOMAINS=test.io,test.com,abc123.com" 
+docker run  --name subalert -d \ 
+-e "SLACK_WEB_HOOK=xxxxxxxxxxxxx" \
+-e "DOMAINS=test.io,test.com,abc123.com" \
 subalert
 ```
 
