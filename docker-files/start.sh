@@ -1,3 +1,5 @@
+#!/bin/bash
+
 add_urls() {
     # Out DOMAINS ENV as plaintext
    declare -a DOMAINS="$DOMAINS"
