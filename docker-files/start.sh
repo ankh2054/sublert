@@ -29,11 +29,8 @@ DB_NAME = 'certwatch'
 DB_USER = 'guest'
 DB_PASSWORD = ''
 EOF
-
 }
 
-
-}
 slack_nitification(){
 /usr/bin/python3 /root/sublerts/sublert.py -r -l
 }
