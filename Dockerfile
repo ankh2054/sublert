@@ -6,8 +6,6 @@ WORKDIR /root/sublerts
 ADD . .
 RUN pip3 install -r requirements.txt 
 ADD docker-files/config-docker.py config.py
-RUN sed -i "s/slack_posting_webhook/$SLACK_WEB_HOOK/" ./config.py && \
-    sed -i "s/slack_logging_webhook/$SLACK_WEB_HOOK/" ./config.py
 RUN chmod +x sublert.py
 ADD docker-files/start.sh /root
 RUN chmod u+x /root/start.sh
