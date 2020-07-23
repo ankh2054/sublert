@@ -7,7 +7,7 @@ add_urls() {
    for domain in "${DOMAINS[@]}"
     do
     : 
-    /usr/bin/python3/python3 sublert.py -u $domain -q true
+    /usr/bin/python3 sublert.py -u $domain -q true
     done
 
 
