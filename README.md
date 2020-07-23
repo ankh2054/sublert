@@ -38,7 +38,7 @@ Short Form    | Long Form     | Description
 
 - Will configure a container and run subalert every 12 hours.
 - All found subdomains will be send to a slack channel.
-- Once started if everything went well it sends a test alert to your slack.
+- Once started if everything went well,  it sends a test alert to your slack channel.
 
 ## ENV Variables
 
@@ -64,10 +64,10 @@ docker run  --name subalert -d \
 subalert
 ```
 
-## To add mre domains once conatiner is live
+## To add more domains once conatiner is live
 
 ```
-docker exec -ti subalert /usr/bin/python3python3 /root/subalerts/sublert.py -u domain.com -q true
+ sudo docker exec -ti subalert python3 /root/sublerts/sublert.py -u domain.com -q true
 ``
 
 
